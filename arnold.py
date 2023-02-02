@@ -11,18 +11,15 @@ dinChoice = str(input("Our daily specials are: \n\t1.Prime rib dinner \n\t2.Turk
 if dinChoice == '1' or dinChoice == '2'  :
         if dinChoice == '1' :
             quanDin1 = float(input("How many of the Prime rib dinners would you like: "))
-            conf1 = input("Are you sure you would like to order: \n" + str(quanDin1) + "\tX Prime rib Dinners:" + "\n[Yes or No]: ").strip()
+             
             while True:
-                   
-                   if conf1 != 'y' and conf1 != 'Y' and conf1 != 'n' and conf1 != 'N' :
-                          print("Incorrect response, try again.") 
-                   elif conf1 == 'y' or conf1 == 'Y' :
-                          print("great let's continue")
-                          break
-                   elif conf1 == 'n' or conf1 == 'N' :
-                          print("We are sorry to see you leave.")
-                          break
-
+            
+                conf1 = str(input("Are you sure you would like to order: \n" + str(quanDin1) + "\tX Prime rib Dinners:" + "\n[Yes or No]: "))
+                if conf1 == 'y' :
+                       break       
+                             
+            else:
+                   print("ok")            
         elif dinChoice == '2':
             quanDin2 = float(input("How many of the turkey dinners would you like: "))
             conf2 = input("Are you sure you would like to order: \n" + str(quanDin2) + "\tX  Turkey Dinners:" + "\n[Yes or No]: ").strip()
@@ -31,5 +28,8 @@ elif dinChoice.isalpha() :
         print("Invalid response, please user numbers, not letters.")
 else:
             print("Invalid choice, please select choice 1 or 2.")       
+
+
+
 
 
