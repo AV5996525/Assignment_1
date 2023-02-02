@@ -2,6 +2,7 @@ din1 = 25.50
 din2 = 29.50
 disC = 100
 disC1 = 500
+firHead = ["QTY", "ITEM"]
 print("Welcome to Arnold's Amazing Eats II \nHome of the best food in Waterloo! \nThis app will simply help you make an order!")
 firName = input("Enter your first name: ").strip()
 lasName = input("Enter your last name: ").strip()
@@ -21,10 +22,12 @@ if dinChoice == '1' or dinChoice == '2'  :
                     sumT1 = (quanDin1 * din1)
                     
                     if sumT1 >= disC :        
-                            print("10% discount granted!")
+                            print("Current total is: ")
                             Ribdiscnt10 = (.10*sumT1)
                             RibgrandT10 = (sumT1 - Ribdiscnt10)
-                            print(str(RibgrandT10))
+                            print("Your sub total is: " + "$" + str(sumT1) + "\nYour 10% discount savings are: " + "$" + str(Ribdiscnt10))
+                            print(str(firHead) + "\n" + str(quanDin1) + " X\t" + "Prime rib dinner\n" + "-----------------------------------\n" + "Your grand total is : " + "$" + str(RibgrandT10) + "\n-----------------------------------\n")
+                            
                     if sumT1 < disC :
                             print("5% discount granted!")
                             Ribdiscnt5 = (.05*sumT1)
