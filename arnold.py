@@ -1,3 +1,5 @@
+din1 = 25.50
+din2 = 29.50
 print("Welcome to Arnold's Amazing Eats II \nHome of the best food in Waterloo! \nThis app will simply help you make an order!")
 firName = input("Enter your first name: ").strip()
 lasName = input("Enter your last name: ").strip()
@@ -16,13 +18,18 @@ if dinChoice == '1' or dinChoice == '2'  :
             
                 conf1 = str(input("Are you sure you would like to order: \n" + str(quanDin1) + "\tX Prime rib Dinners:" + "\n[Yes or No]: "))
                 if conf1 == 'y' or conf1 == 'Y' :
-                       break       
-                elif conf1 == 'n' or conf1 == 'N' :
+                              
+                    sumT1 = (quanDin1 * din1)
+                    print(str(sumT1))
+                    break
+                     
+            
+                if conf1 == 'n' or conf1 == 'N' :
                        break    
-                else:
+                elif conf1 != 'y' or 'Y' or 'n' or 'N':
                        print("Invalid entry")         
-            else:
-                   print("ok")            
+
+
         elif dinChoice == '2':
             quanDin2 = float(input("How many of the turkey dinners would you like: "))
             while True:
