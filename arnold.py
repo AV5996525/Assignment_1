@@ -11,7 +11,7 @@ prov = input("Enter your province: ").strip()
 pos = input("Enter your postal code: ").strip()
 spcInst = input("Enter any special delivery instructions: ")
 phNum = input("Enter your phone number: ").strip()
-dinChoice = str(input("Our daily specials are: \n\t1.Prime Rib Dinner - $25.50 \n\t2.Turkey Dinner - $29.50"))
+dinChoice = str(input("Our daily specials are: \n\t1.Prime Rib Dinner - $25.50 \n\t2.Turkey Dinner - $29.50\n"))
 
 if dinChoice == '1' or dinChoice == '2'  :
         if dinChoice == '1' :
@@ -22,7 +22,7 @@ if dinChoice == '1' or dinChoice == '2'  :
                     sumT1 = (quanDin1 * din1)
                     
                     if sumT1 >= disC :        
-                            print("Current total is: ")
+                            print("Current selection: ")
                             Ribdiscnt10 = (.10*sumT1)
                             RibgrandT10 = (sumT1 - Ribdiscnt10)
                             print("Your sub total is: " + "$" + str(sumT1) + "\nYour 10% discount savings are: " + "$" + str(Ribdiscnt10))
