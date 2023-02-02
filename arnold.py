@@ -6,19 +6,20 @@ prov = input("Enter your province: ").strip()
 pos = input("Enter your postal code: ").strip()
 spcInst = input("Enter any special delivery instructions: ")
 phNum = input("Enter your phone number: ").strip()
-dinChoice = input("Our daily specials are: \n\t1.Prime rib dinner \n\t2.Turkey Dinner").strip()
+dinChoice = int(input("Our daily specials are: \n\t1.Prime rib dinner \n\t2.Turkey Dinner"))
 
-if dinChoice.isdigit() == True :
-    if dinChoice == 1 :
-        print("How many of the Prime rib dinners would you like: ")
-    elif dinChoice == 2:
-        print("How many of the Turkey dinners would you like: ")
-    elif dinChoice != 1 or dinChoice != 2 :
-        print("Invalid choice, please select choice 1 or 2.")        
-if dinChoice.isalpha() :
-    print("Invalid response, please user numbers, not letters.")
+
+if dinChoice == 1 or dinChoice == 2  :
+        if dinChoice == 1 :
+            quanDin1 = float(input("How many of the Prime rib dinners would you like: ")).strip()
+            conf1 = input("Are you sure you would like to order: \n" + str(quanDin1) + "\tX Dinners:" + "\n[Yes or No]: ").strip()
+        elif dinChoice == 2:
+            quanDin2 = float(input("How many of the turkey dinners would you like: ")).strip()
+            conf2 = input("Are you sure you would like to order: \n" + str(quanDin2) + "\tX Dinners:" + "\n[Yes or No]: ").strip()
+             
+elif dinChoice.isalpha() :
+        print("Invalid response, please user numbers, not letters.")
 else:
-    pass
-
+            print("Invalid choice, please select choice 1 or 2.")       
 
 
