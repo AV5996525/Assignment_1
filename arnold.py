@@ -39,8 +39,13 @@ if dinChoice == '1' or dinChoice == '2'  :
                 conf2 = input("Are you sure you would like to order: \n" + str(quanDin2) + "\tX  Turkey Dinners:" + "\n[Yes or No]: ")
                 if conf2 == 'y' or conf2 == 'Y' :
                       sumT2 = (quanDin2 * din2)
-                      print(str(sumT2)) 
-                      break       
+                      if sumT2 >= disC :        
+                            print("10% discount granted!")
+                      if sumT2 < disC :
+                            print("5% discount granted!")
+                      if sumT2 > disC1 :
+                            print("15 % discount activated!")   
+                      break     
                 elif conf2 == 'n' or conf2 == 'N' :
                        break    
                 elif conf2 != 'y' or 'Y' or 'n' or 'N':
