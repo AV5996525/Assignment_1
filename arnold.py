@@ -22,10 +22,19 @@ if dinChoice == '1' or dinChoice == '2'  :
                     
                     if sumT1 >= disC :        
                             print("10% discount granted!")
+                            Ribdiscnt10 = (.10*sumT1)
+                            RibgrandT10 = (sumT1 - Ribdiscnt10)
+                            print(str(RibgrandT10))
                     if sumT1 < disC :
                             print("5% discount granted!")
+                            Ribdiscnt5 = (.05*sumT1)
+                            Ribgrand5 = (sumT1 - Ribdiscnt5)
+                            print(str(Ribgrand5))
                     if sumT1 > disC1 :
-                            print("15 % discount activated!")         
+                            print("15 % discount activated!")
+                            Ribdiscnt15 = (.15*sumT1)
+                            Ribgrand15 = (sumT1 - Ribdiscnt15)
+                            print(str(Ribgrand15))         
                             
                     break
                                                            
