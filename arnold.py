@@ -21,11 +21,11 @@ if dinChoice == '1' or dinChoice == '2'  :
                     sumT1 = (quanDin1 * din1)
                     
                     if sumT1 >= disC :        
-                            print("discount time")
+                            print("10% discount granted!")
                     if sumT1 < disC :
-                            print("no discount")
+                            print("5% discount granted!")
                     if sumT1 > disC1 :
-                            print("15 % discount activated")         
+                            print("15 % discount activated!")         
                             
                     break
                                                            
