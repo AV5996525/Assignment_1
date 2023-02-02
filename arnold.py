@@ -15,15 +15,26 @@ if dinChoice == '1' or dinChoice == '2'  :
             while True:
             
                 conf1 = str(input("Are you sure you would like to order: \n" + str(quanDin1) + "\tX Prime rib Dinners:" + "\n[Yes or No]: "))
-                if conf1 == 'y' :
+                if conf1 == 'y' or conf1 == 'Y' :
                        break       
-                             
+                elif conf1 == 'n' or conf1 == 'N' :
+                       break    
+                else:
+                       print("Invalid entry")         
             else:
                    print("ok")            
         elif dinChoice == '2':
             quanDin2 = float(input("How many of the turkey dinners would you like: "))
-            conf2 = input("Are you sure you would like to order: \n" + str(quanDin2) + "\tX  Turkey Dinners:" + "\n[Yes or No]: ").strip()
-             
+            while True:
+                conf2 = input("Are you sure you would like to order: \n" + str(quanDin2) + "\tX  Turkey Dinners:" + "\n[Yes or No]: ")
+                if conf2 == 'y' or conf2 == 'Y' :
+                       break       
+                elif conf2 == 'n' or conf2 == 'N' :
+                       break    
+                else:
+                       print("Invalid entry")                
+            else:
+                   print("ok")
 elif dinChoice.isalpha() :
         print("Invalid response, please user numbers, not letters.")
 else:
