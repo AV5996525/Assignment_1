@@ -27,7 +27,17 @@ if dinChoice == '1' or dinChoice == '2'  :
                             RibgrandT10 = (sumT1 - Ribdiscnt10)
                             print("Your sub total is: " + "$" + str(sumT1) + "\nYour 10% discount savings are: " + "$" + str(Ribdiscnt10))
                             print(str(firHead) + "\n" + str(quanDin1) + " X\t" + "Prime rib dinner\n" + "-----------------------------------\n" + "Your grand total is : " + "$" + str(RibgrandT10) + "\n-----------------------------------\n")
-                            
+                            while True:
+                                   stud = str(input("Are you a student? "))
+                                   if stud == 'y' or stud == 'Y' :
+                                          print("Enjoy a student discount")
+                                          break
+                                   if stud == 'n' or stud == 'N' :
+                                          print("No student discount applicable.")
+                                          break  
+                                   if stud != 'y' or 'Y' or 'n' or 'N' :
+                                          print("Incorrect response")
+                                              
                     if sumT1 < disC :
                             print("5% discount granted!")
                             Ribdiscnt5 = (.05*sumT1)
