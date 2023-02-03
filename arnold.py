@@ -45,11 +45,14 @@ if dinChoice == '1' or dinChoice == '2'  :
                                           RibgrandT10St = (RibgrandT10 - RibgrandT10S)  
                                           Ribtax10 = (hst*RibgrandT10St)
                                           Ribtax10F = Ribtax10 + RibgrandT10St
-                                          recRib10a = [ "Order"+'\n'+"---------", "Item\nAmt\n------", "Item\nPrice\n--------","Total\n---------"]
-                                          recRib10b = ["Prime rib dinner"+'\t', str(quanDin1)+"                ", str(din1)+"                       ", str(sumT1)+"                 "]
-                                          print(res)
-                                          print(str(recRib10a))
-                                          print(str(recRib10b))
+                                          recRib10a = [ "Order", "Item Amount", "Item Price","Total"]
+                                          genBord = ["--------", "--------","--------","---------"]
+                                          recRib10b = ["Prime rib dinner", str(quanDin1), str(din1), str(sumT1)]
+                                          print(*res, sep = ' ')
+                                          print(*str(recRib10a), sep = ' ')
+                                          print(' '.join(genBord))
+                                          print(*str(recRib10b), sep = ' ')
+
                                           break
                                    if stud == 'n' or stud == 'N' :
                                           print("No student discount applicable.")
