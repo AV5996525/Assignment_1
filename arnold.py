@@ -29,10 +29,11 @@ dinChoice = str(input("Our daily specials are: \n\t1.Prime Rib Dinner - $25.50 \
 if dinChoice == '1' or dinChoice == '2'  :
         if dinChoice == '1' :
             quanDin1 = float(input("How many of the Prime rib dinners would you like: "))             
+            sumT1 = (quanDin1 * din1)
             while True:
                 conf1 = str(input("Are you sure you would like to order: \n" + str(quanDin1) + "\tX Prime rib Dinners:" + "\n[Yes or No]: "))
                 if conf1 == 'y' or conf1 == 'Y' :                              
-                    sumT1 = (quanDin1 * din1)
+                
                     
                     if sumT1 >= disC :        
                             print("Current selection: ")
@@ -63,17 +64,20 @@ if dinChoice == '1' or dinChoice == '2'  :
                                    if stud != 'y' or 'Y' or 'n' or 'N' :
                                           print("Incorrect response")
                                               
-                    if sumT1 < disC :
+                    elif sumT1 < disC :
                             print("5% discount granted!")
                             Ribdiscnt5 = (.05*sumT1)
                             Ribgrand5 = (sumT1 - Ribdiscnt5)
-                            print(str(Ribgrand5))
-                    if sumT1 > disC1 :
+                            
+                            print("Your sub total is: " + "$" + str(sumT1) + "\nYour 5% discount savings are: " + "$" + str(Ribdiscnt5))
+                            print(str(firHead) + "\n" + str(quanDin1) + " X\t" + "Prime rib dinner\n" + "-----------------------------------\n" + "Your grand total is : " + "$" + str(Ribgrand5) + "\n-----------------------------------\n")
+                    if disC1 < sumT1 :
                             print("15 % discount activated!")
                             Ribdiscnt15 = (.15*sumT1)
                             Ribgrand15 = (sumT1 - Ribdiscnt15)
                             print(str(Ribgrand15))         
-                            
+                            print("Your sub total is: " + "$" + str(sumT1) + "\nYour 15% discount savings are: " + "$" + str(Ribdiscnt15))
+                            print(str(firHead) + "\n" + str(quanDin1) + " X\t" + "Prime rib dinner\n" + "-----------------------------------\n" + "Your grand total is : " + "$" + str(Ribgrand15) + "\n-----------------------------------\n")
                     break
                                                            
                 if conf1 == 'n' or conf1 == 'N' :
