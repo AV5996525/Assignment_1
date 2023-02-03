@@ -1,5 +1,7 @@
 din1 = 25.50
 din2 = 29.50
+hst = .13
+studIc = .10
 disC = 100
 disC1 = 500
 firHead = ["QTY", "ITEM"]
@@ -31,9 +33,14 @@ if dinChoice == '1' or dinChoice == '2'  :
                                    stud = str(input("Are you a student? "))
                                    if stud == 'y' or stud == 'Y' :
                                           print("Enjoy a student discount")
+                                          RibgrandT10S = (RibgrandT10 * studIc)
+                                          RibgrandT10St = (RibgrandT10 - RibgrandT10S)  
+                                          Ribtax10 = (hst*RibgrandT10St)
+                                          Ribtax10F = Ribtax10 + RibgrandT10St
                                           break
                                    if stud == 'n' or stud == 'N' :
                                           print("No student discount applicable.")
+
                                           break  
                                    if stud != 'y' or 'Y' or 'n' or 'N' :
                                           print("Incorrect response")
