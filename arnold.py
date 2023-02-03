@@ -45,11 +45,13 @@ if dinChoice == '1' or dinChoice == '2'  :
                                           RibgrandT10St = (RibgrandT10 - RibgrandT10S)  
                                           Ribtax10 = (hst*RibgrandT10St)
                                           Ribtax10F = Ribtax10 + RibgrandT10St
-                                          recRib10a = [ "Order", "Item Amount", "Item Price","Total"]
+                                          recRib10a = [ "Order", "Item", "Item","Total"]
+                                          recRib10a2 = [ '', "Amount", "Price",'']
                                           genBord = ["--------", "--------","--------","---------"]
                                           recRib10b = ["Prime rib dinner", str(quanDin1), str(din1), str(sumT1)]
                                           print(*res, sep = ' ')
                                           print(' '.join(recRib10a))
+                                          print(' '.join(recRib10a2))
                                           print(' '.join(genBord))
                                           print(' '.join(recRib10b))
 
