@@ -50,7 +50,7 @@ if dinChoice == '1' or dinChoice == '2'  :
                                           Ribtax10F = Ribtax10 + RibgrandT10St
                                           recRib10b = ["Prime rib dinner", str(quanDin1), str(din1), str(sumT1)]
                                           print(*res, sep = ' ')
-                                          print(tabulate([['Prime Rib dinner', quanDin1, din1, sumT1]], headers = ["Order", "Item Amnt", "Item Price","Total"]))
+                                          print(tabulate([['Prime Rib dinner', quanDin1, din1, sumT1], ["10 % Student savings", '', '', '- $'+ str(RibgrandT10S)]], headers = ["Order", "Item Amnt", "Item Price","Total"]))
                                           
 
                                           break
