@@ -57,7 +57,8 @@ if dinChoice == '1' or dinChoice == '2'  :
                                           RibgrandT10Stnd = RibgrandT10
                                           RibgrandT10Stndtx = RibgrandT10 * hst
                                           RibgrandT10Stndtxf = RibgrandT10Stndtx + RibgrandT10
-                                          
+                                          print(*res, sep = ' ')
+                                          print(tabulate([['Prime Rib dinner', quanDin1, din1, sumT1], [ "", "", "", ""], ['','','sub total', "$"+str(RibgrandT10Stnd)], ['','',"Tax 13%", "$"+str(RibgrandT10Stndtx)],['','',"Total", "$"+str(RibgrandT10Stndtxf)]], headers = ["Order", "Item Amnt", "Item Price","Total"]))  
                                           break  
                                    if stud != 'y' or 'Y' or 'n' or 'N' :
                                           print("Incorrect response")
