@@ -1,4 +1,6 @@
 
+from tabulate import tabulate
+
 din1 = 25.50
 din2 = 29.50
 hst = .13
