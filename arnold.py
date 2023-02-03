@@ -51,12 +51,13 @@ if dinChoice == '1' or dinChoice == '2'  :
                                           recRib10b = ["Prime rib dinner", str(quanDin1), str(din1), str(sumT1)]
                                           print(*res, sep = ' ')
                                           print(tabulate([['Prime Rib dinner', quanDin1, din1, sumT1], ["10 % Student savings", '', '', '- $'+ str(RibgrandT10S)],['','','sub total', "$"+str(RibgrandT10St)],['','',"Tax 13%", "$"+str(Ribtax10)],['','',"Total", "$"+str(Ribtax10F)]], headers = ["Order", "Item Amnt", "Item Price","Total"]))
-                                          
-
                                           break
                                    if stud == 'n' or stud == 'N' :
                                           print("No student discount applicable.")
-
+                                          RibgrandT10Stnd = RibgrandT10
+                                          RibgrandT10Stndtx = RibgrandT10 * hst
+                                          RibgrandT10Stndtxf = RibgrandT10Stndtx + RibgrandT10
+                                          
                                           break  
                                    if stud != 'y' or 'Y' or 'n' or 'N' :
                                           print("Incorrect response")
