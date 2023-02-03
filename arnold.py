@@ -18,7 +18,8 @@ phNum = input("Enter your phone number: ").strip()
 receipt1 = [firName+" ", city+" ", phNum+" ", spcInst]
 receipt2 = [lasName+" ", prov+" ", pos+" ", '']
 res = "\n".join("{}{}".format(x,y) for x,y in zip(receipt1, receipt2))
-print(res)
+
+
 
 dinChoice = str(input("Our daily specials are: \n\t1.Prime Rib Dinner - $25.50 \n\t2.Turkey Dinner - $29.50\n"))
 
@@ -44,6 +45,11 @@ if dinChoice == '1' or dinChoice == '2'  :
                                           RibgrandT10St = (RibgrandT10 - RibgrandT10S)  
                                           Ribtax10 = (hst*RibgrandT10St)
                                           Ribtax10F = Ribtax10 + RibgrandT10St
+                                          recRib10a = [ "Order"+'\n'+"---------", "Item\nAmt\n------", "Item\nPrice\n--------","Total\n---------"]
+                                          recRib10b = ["Prime rib dinner"+'\t', str(quanDin1)+"                ", str(din1)+"                       ", str(sumT1)+"                 "]
+                                          print(res)
+                                          print(str(recRib10a))
+                                          print(str(recRib10b))
                                           break
                                    if stud == 'n' or stud == 'N' :
                                           print("No student discount applicable.")
