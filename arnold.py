@@ -49,9 +49,9 @@ if dinChoice == '1' or dinChoice == '2'  :
                                           genBord = ["--------", "--------","--------","---------"]
                                           recRib10b = ["Prime rib dinner", str(quanDin1), str(din1), str(sumT1)]
                                           print(*res, sep = ' ')
-                                          print(*str(recRib10a), sep = ' ')
+                                          print(' '.join(recRib10a))
                                           print(' '.join(genBord))
-                                          print(*str(recRib10b), sep = ' ')
+                                          print(' '.join(recRib10b))
 
                                           break
                                    if stud == 'n' or stud == 'N' :
