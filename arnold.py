@@ -5,6 +5,7 @@ studIc = .10
 disC = 100
 disC1 = 500
 firHead = ["QTY", "ITEM"]
+
 print("Welcome to Arnold's Amazing Eats II \nHome of the best food in Waterloo! \nThis app will simply help you make an order!")
 firName = input("Enter your first name: ").strip()
 lasName = input("Enter your last name: ").strip()
@@ -13,6 +14,12 @@ prov = input("Enter your province: ").strip()
 pos = input("Enter your postal code: ").strip()
 spcInst = input("Enter any special delivery instructions: ")
 phNum = input("Enter your phone number: ").strip()
+
+receipt1 = [firName+" ", city+" ", phNum+" ", spcInst]
+receipt2 = [lasName+" ", prov+" ", pos+" ", '']
+res = "\n".join("{}{}".format(x,y) for x,y in zip(receipt1, receipt2))
+print(res)
+
 dinChoice = str(input("Our daily specials are: \n\t1.Prime Rib Dinner - $25.50 \n\t2.Turkey Dinner - $29.50\n"))
 
 if dinChoice == '1' or dinChoice == '2'  :
