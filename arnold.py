@@ -60,6 +60,7 @@ if dinChoice == '1' or dinChoice == '2'  :
                                           print(tabulate([['Prime Rib dinner', quanDin1, din1, sumT1], ["15 % Student savings", '', '', '- $'+ str(RibgrandT15S)],['','','sub total', "$"+str(RibgrandT15St)],['','',"Tax 13%", "$"+str(Ribtax15)],['','',"Total", "$"+str(Ribtax15F)]], headers = ["Order", "Item Amnt", "Item Price","Total"]))
                                           break
                                    if stud == 'n' or stud == 'N' :
+                                          flag2 = True
                                           print("No student discount applicable.")
                                           RibgrandT15Stnd = Ribgrand15
                                           RibgrandT15Stndtx = Ribgrand15 * hst
@@ -92,6 +93,7 @@ if dinChoice == '1' or dinChoice == '2'  :
                                           print(tabulate([['Prime Rib dinner', quanDin1, din1, sumT1], ["10 % Student savings", '', '', '- $'+ str(RibgrandT10S)],['','','sub total', "$"+str(RibgrandT10St)],['','',"Tax 13%", "$"+str(Ribtax10)],['','',"Total", "$"+str(Ribtax10F)]], headers = ["Order", "Item Amnt", "Item Price","Total"]))
                                           break
                                    if stud == 'n' or stud == 'N' :
+                                          flag3 = True
                                           print("No student discount applicable.")
                                           RibgrandT10Stnd = RibgrandT10
                                           RibgrandT10Stndtx = RibgrandT10 * hst
@@ -125,6 +127,7 @@ if dinChoice == '1' or dinChoice == '2'  :
                                           print(tabulate([['Prime Rib dinner', quanDin1, din1, sumT1], ["5 % Student savings", '', '', '- $'+ str(RibgrandT5S)],['','','sub total', "$"+str(RibgrandT5St)],['','',"Tax 13%", "$"+str(Ribtax5)],['','',"Total", "$"+str(Ribtax5F)]], headers = ["Order", "Item Amnt", "Item Price","Total"]))
                                           break
                                    if stud == 'n' or stud == 'N' :
+                                          flag4 = True
                                           print("No student discount applicable.")
                                           RibgrandT5Stnd = Ribgrand5
                                           RibgrandT5Stndtx = RibgrandT5Stnd * hst
@@ -139,8 +142,10 @@ if dinChoice == '1' or dinChoice == '2'  :
                    
                                                                
                 if conf1 == 'n' or conf1 == 'N' :
-                        break    
+                       flag1 = True 
+                       break    
                 elif conf1 != 'y' or 'Y' or 'n' or 'N':
+                       flag1 = True
                        print("Invalid entry")         
         elif dinChoice == '2':
             quanDin2 = float(input("How many of the turkey dinners would you like: "))
