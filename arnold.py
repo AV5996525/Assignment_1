@@ -74,7 +74,7 @@ if dinChoice == '1' or dinChoice == '2'  :
                                           RibgrandT15Stndtx = Ribgrand15 * hst
                                           RibgrandT15Stndtxf = RibgrandT15Stnd + RibgrandT15Stndtx
                                           print(*res, sep = ' ')
-                                          print(tabulate([['Prime Rib dinner', quanDin1, '$' + din1, '$' + sumT1], [ "", "", "", ""], ['','','sub total', "$"+str(RibgrandT15Stnd)], ['','',"Tax 13%", "$"+str(RibgrandT15Stndtx)],['','',"Total", "$"+str(RibgrandT15Stndtxf)]], headers = ["Order", "Item Amnt", "Item Price","Total"]))  
+                                          print(tabulate([['Prime Rib dinner', quanDin1, '$' + din1, '$' + round(sumT1, 2)], [ "", "", "", ""], ['','','sub total', "$"+str(round(RibgrandT15Stnd, 2))], ['','',"Tax 13%", "$"+str(round(RibgrandT15Stndtx, 2))],['','',"Total", "$"+str(round(RibgrandT15Stndtxf, 2))]], headers = ["Order", "Item Amnt", "Item Price","Total"]))  
                                           print(msg)
                                           while True:
                                                 exit
@@ -92,8 +92,8 @@ if dinChoice == '1' or dinChoice == '2'  :
                             print("Current selection: ")
                             Ribdiscnt10 = (.10*sumT1)
                             RibgrandT10 = (sumT1 - Ribdiscnt10)
-                            print("Your sub total is: " + "$" + str(sumT1) + "\nYour 10% discount savings are: " + "$" + str(Ribdiscnt10))
-                            print(str(firHead) + "\n" + str(quanDin1) + " X\t" + "Prime rib dinner\n" + "-----------------------------------\n" + "Your grand total is : " + "$" + str(RibgrandT10) + "\n-----------------------------------\n")
+                            print("Your sub total is: " + "$" + str(round(sumT1, 2)) + "\nYour 10% discount savings are: " + "$" + str(round(Ribdiscnt10, 2)))
+                            print(str(firHead) + "\n" + str(quanDin1) + " X\t" + "Prime rib dinner\n" + "-----------------------------------\n" + "Your grand total is : " + "$" + str(round(RibgrandT10, 2)) + "\n-----------------------------------\n")
                             
                             while True:
                                    flag3 = False
@@ -107,7 +107,7 @@ if dinChoice == '1' or dinChoice == '2'  :
                                           Ribtax10F = Ribtax10 + RibgrandT10St
                                          
                                           print(*res, sep = ' ')
-                                          print(tabulate([['Prime Rib dinner', quanDin1, '$' + din1, '$' + sumT1], ["10 % Student savings", '', '', '- $'+ str(RibgrandT10S)],['','','sub total', "$"+str(RibgrandT10St)],['','',"Tax 13%", "$"+str(Ribtax10)],['','',"Total", "$"+str(Ribtax10F)]], headers = ["Order", "Item Amnt", "Item Price","Total"]))
+                                          print(tabulate([['Prime Rib dinner', str(quanDin1), '$' + str(din1), '$' + str(round(sumT1, 2))], ["10 % Student savings", '', '', '- $'+ str(round(RibgrandT10S, 2))],['','','sub total', "$" + str(round(RibgrandT10St, 2))],['','',"Tax 13%", "$" + str(round(Ribtax10, 2))],['','',"Total", "$" + str(round(Ribtax10F, 2))]], headers = ["Order", "Item Amnt", "Item Price","Total"]))
                                           while True:
                                                 exit
                                    if stud == 'n' or stud == 'N' :
@@ -117,7 +117,7 @@ if dinChoice == '1' or dinChoice == '2'  :
                                           RibgrandT10Stndtx = RibgrandT10 * hst
                                           RibgrandT10Stndtxf = RibgrandT10Stndtx + RibgrandT10
                                           print(*res, sep = ' ')
-                                          print(tabulate([['Prime Rib dinner', quanDin1, '$' + din1, '$' + sumT1], [ "", "", "", ""], ['','','sub total', "$"+str(RibgrandT10Stnd)], ['','',"Tax 13%", "$"+str(RibgrandT10Stndtx)],['','',"Total", "$"+str(RibgrandT10Stndtxf)]], headers = ["Order", "Item Amnt", "Item Price","Total"]))  
+                                          print(tabulate([['Prime Rib dinner', str(quanDin1), '$' + str(din1), '$' + str(round(sumT1, 2))], [ "", "", "", ""], ['','','sub total', "$" + str(round(RibgrandT10Stnd, 2))], ['','',"Tax 13%", "$" + str(round(RibgrandT10Stndtx, 2))],['','',"Total", "$" + str(round(RibgrandT10Stndtxf))]], headers = ["Order", "Item Amnt", "Item Price","Total"]))  
                                           while True:
                                                 exit
                                    if stud != 'y' or 'Y' or 'n' or 'N' :
@@ -191,7 +191,7 @@ if dinChoice == '1' or dinChoice == '2'  :
                             Tugrand10 = (sumT2 - Tudiscnt10)
                                    
                             print("Your sub total is: " + "$" + str(sumT2) + "\nYour 10% discount savings are: " + "$" + str(Tudiscnt10))
-                            print(str(firHead) + "\n" + str(quanDin2) + " X\t" + "Turkey dinner\n" + "-----------------------------------\n" + "Your grand total is : " + "$" + str(Tugrand10) + "\n-----------------------------------\n")
+                            print(str(firHead) + "\n" + str(quanDin2) + " X\t" + "Turkey dinner\n" + "-----------------------------------\n" + "Your grand total is : " + "$" + str(round(Tugrand10, 2)) + "\n-----------------------------------\n")
                             flag8 = False
                             while True:
                                    
@@ -204,7 +204,7 @@ if dinChoice == '1' or dinChoice == '2'  :
                                           Tutax10 = (hst*TugrandT10St)
                                           Tutax10F = Tutax10 + TugrandT10St
                                           print(*res, sep = ' ')
-                                          print(tabulate([['Turkey dinner', str(quanDin2), '$' + str(din2), '$' + str(sumT2)], ["10 % Student savings", '', '', '- $'+ str(TugrandT10S)],['','','sub total', "$" + str(TugrandT10St)],['','',"Tax 13%", "$" + str(Tutax10)],['','',"Total", "$"+str(Tutax10F)]], headers = ["Order", "Item Amnt", "Item Price","Total"]))
+                                          print(tabulate([['Turkey dinner', str(quanDin2), '$' + str(din2), '$' + str(round(sumT2, 2))], ["10 % Student savings", '', '', '- $'+ str(round(TugrandT10S, 2))],['','','sub total', "$" + str(round(TugrandT10St, 2))],['','',"Tax 13%", "$" + str(round(Tutax10, 2))],['','',"Total", "$" + str(round(Tutax10F, 2))]], headers = ["Order", "Item Amnt", "Item Price","Total"]))
                                           print(msg)
                                           
                                           
@@ -224,7 +224,7 @@ if dinChoice == '1' or dinChoice == '2'  :
                                           TugrandT10Stndtx = Tugrand10 * hst
                                           TugrandT10Stndtxf = TugrandT10Stnd + TugrandT10Stndtx
                                           print(*res, sep = ' ')
-                                          print(tabulate([['Turkey dinner', str(quanDin2), '$' + str(din2), '$' + str(sumT2)], [ "", "", "", ""], ['','','sub total', "$" + str(TugrandT10Stnd)], ['','',"Tax 13%", "$" + str(TugrandT10Stndtx)],['','',"Total", "$" + str(TugrandT10Stndtxf)]], headers = ["Order", "Item Amnt", "Item Price","Total"]))  
+                                          print(tabulate([['Turkey dinner', str(quanDin2), '$' + str(round(din2, 2)), '$' + str(sumT2)], [ "", "", "", ""], ['','','sub total', "$" + str(round(TugrandT10Stnd, 2))], ['','',"Tax 13%", "$" + str(round(TugrandT10Stndtx, 2))],['','',"Total", "$" + str(round(TugrandT10Stndtxf, 2))]], headers = ["Order", "Item Amnt", "Item Price","Total"]))  
                                           print(msg)
                                           while True:
                                                 exit
@@ -238,8 +238,8 @@ if dinChoice == '1' or dinChoice == '2'  :
                             Tudiscnt5 = (.5*sumT2)
                             Tugrand5 = (sumT2 - Tudiscnt5)
                                     
-                            print("Your sub total is: " + "$" + str(sumT2) + "\nYour 5% discount savings are: " + "$" + str(Tudiscnt5))
-                            print(str(firHead) + "\n" + str(quanDin2) + " X\t" + "Turkey dinner\n" + "-----------------------------------\n" + "Your grand total is : " + "$" + str(Tugrand5) + "\n-----------------------------------\n")
+                            print("Your sub total is: " + "$" + str(round(sumT2, 2)) + "\nYour 5% discount savings are: " + "$" + str(round(Tudiscnt5, 2)))
+                            print(str(firHead) + "\n" + str(quanDin2) + " X\t" + "Turkey dinner\n" + "-----------------------------------\n" + "Your grand total is : " + "$" + str(round(Tugrand5, 2)) + "\n-----------------------------------\n")
                             flag7 = False
                             while True:
                                    
@@ -252,7 +252,7 @@ if dinChoice == '1' or dinChoice == '2'  :
                                           Tutax5 = (hst*TugrandT5St)
                                           Tutax5F = Tutax5 + TugrandT5St
                                           print(*res, sep = ' ')
-                                          print(tabulate([['Turkey dinner', str(quanDin2), '$' + str(din2), '$' + str(sumT2)], ["10 % Student savings", '', '', '- $'+ str(TugrandT5S)],['','','sub total', "$"+str(TugrandT5St)],['','',"Tax 13%", "$"+str(Tutax5)],['','',"Total", "$"+str(Tutax5F)]], headers = ["Order", "Item Amnt", "Item Price","Total"]))
+                                          print(tabulate([['Turkey dinner', str(quanDin2), '$' + str(din2), '$' + str(round(sumT2, 2))], ["10 % Student savings", '', '', '- $'+ str(round(TugrandT5S, 2))],['','','sub total', "$" + str(round(TugrandT5St, 2))],['','',"Tax 13%", "$" + str(round(Tutax5, 2))],['','',"Total", "$" + str(round(Tutax5F, 2))]], headers = ["Order", "Item Amnt", "Item Price","Total"]))
                                           print(msg)
                                           
                                           
@@ -272,7 +272,7 @@ if dinChoice == '1' or dinChoice == '2'  :
                                           TugrandT5Stndtx = Tugrand5 * hst
                                           TugrandT5Stndtxf = TugrandT5Stnd + TugrandT5Stndtx
                                           print(*res, sep = ' ')
-                                          print(tabulate([['Turkey dinner', str(quanDin2), '$' + str(din2), '$' + str(sumT2)], [ "", "", "", ""], ['','','sub total', "$" + str(TugrandT5Stnd)], ['','',"Tax 13%", "$" + str(TugrandT5Stndtx)],['','',"Total", "$" + str(TugrandT5Stndtxf)]], headers = ["Order", "Item Amnt", "Item Price","Total"]))  
+                                          print(tabulate([['Turkey dinner', str(quanDin2), '$' + str(din2), '$' + str(round(sumT2, 2))], [ "", "", "", ""], ['','','sub total', "$" + str(round(TugrandT5Stnd, 2))], ['','',"Tax 13%", "$" + str(round(TugrandT5Stndtx, 2))],['','',"Total", "$" + str(round(TugrandT5Stndtxf, 2))]], headers = ["Order", "Item Amnt", "Item Price","Total"]))  
                                           print(msg)
                                           while True:
                                                 exit
@@ -287,8 +287,8 @@ if dinChoice == '1' or dinChoice == '2'  :
                             Tudiscnt15 = (.15*sumT2)
                             Tugrand15 = (sumT2 - Tudiscnt15)
                                     
-                            print("Your sub total is: " + "$" + str(sumT2) + "\nYour 15% discount savings are: " + "$" + str(Tudiscnt15))
-                            print(str(firHead) + "\n" + str(quanDin2) + " X\t" + "Turkey dinner\n" + "-----------------------------------\n" + "Your grand total is : " + "$" + str(Tugrand15) + "\n-----------------------------------\n")
+                            print("Your sub total is: " + "$" + str(round(sumT2, 2)) + "\nYour 15% discount savings are: " + "$" + str(round(Tudiscnt15, 2)))
+                            print(str(firHead) + "\n" + str(quanDin2) + " X\t" + "Turkey dinner\n" + "-----------------------------------\n" + "Your grand total is : " + "$" + str(round(Tugrand15, 2)) + "\n-----------------------------------\n")
                             flag6 = False
                             while True:
                                    
@@ -301,7 +301,7 @@ if dinChoice == '1' or dinChoice == '2'  :
                                           Tutax15 = (hst*TugrandT15St)
                                           Tutax15F = Tutax15 + TugrandT15St
                                           print(*res, sep = ' ')
-                                          print(tabulate([['Turkey dinner', str(quanDin2), '$' + str(din2), '$' + str(sumT2)], ["10 % Student savings", '', '', '- $' + str(TugrandT15S)],['','','sub total', "$" + str(TugrandT15St)],['','',"Tax 13%", "$" + str(Tutax15)],['','',"Total", "$"+str(Tutax15F)]], headers = ["Order", "Item Amnt", "Item Price","Total"]))
+                                          print(tabulate([['Turkey dinner', str(quanDin2), '$' + str(din2), '$' + str(round(sumT2, 2))], ["10 % Student savings", '', '', '- $' + str(round(TugrandT15S, 2))],['','','sub total', "$" + str(round(TugrandT15St, 2))],['','',"Tax 13%", "$" + str(round(Tutax15, 2))],['','',"Total", "$"+str(round(Tutax15F, 2))]], headers = ["Order", "Item Amnt", "Item Price","Total"]))
                                           print(msg)
                                           
                                           
@@ -321,7 +321,7 @@ if dinChoice == '1' or dinChoice == '2'  :
                                           TugrandT15Stndtx = Tugrand15 * hst
                                           TugrandT15Stndtxf = TugrandT15Stnd + TugrandT15Stndtx
                                           print(*res, sep = ' ')
-                                          print(tabulate([['Turkey dinner', str(quanDin2), '$' + str(din2), '$' + str(sumT2)], [ "", "", "", ""], ['','','sub total', "$"+str(TugrandT15Stnd)], ['','',"Tax 13%", "$" + str(TugrandT15Stndtx)],['','',"Total", "$" +str(TugrandT15Stndtxf)]], headers = ["Order", "Item Amnt", "Item Price","Total"]))  
+                                          print(tabulate([['Turkey dinner', str(quanDin2), '$' + str(din2), '$' + str(round(sumT2, 2))], [ "", "", "", ""], ['','','sub total', "$" + str(round(TugrandT15Stnd, 2))], ['','',"Tax 13%", "$" + str(round(TugrandT15Stndtx, 2))],['','',"Total", "$" + str(round(TugrandT15Stndtxf, 2))]], headers = ["Order", "Item Amnt", "Item Price","Total"]))  
                                           print(msg)
                                           while True:
                                                 exit
