@@ -30,8 +30,9 @@ if dinChoice == '1' or dinChoice == '2'  :
         if dinChoice == '1' :
             quanDin1 = float(input("How many of the Prime rib dinners would you like: "))             
             sumT1 = (quanDin1 * din1)
+            flag1 = False
             while True:
-                flag1 = False
+                
                 conf1 = str(input("Are you sure you would like to order: \n" + str(quanDin1) + "\tX Prime rib Dinners:" + "\n[Yes or No]: "))
                 if conf1 == 'y' or conf1 == 'Y' :                              
                     flag1 = True
@@ -59,8 +60,11 @@ if dinChoice == '1' or dinChoice == '2'  :
                                           print(tabulate([['Prime Rib dinner', quanDin1, din1, sumT1], ["10 % Student savings", '', '', '- $'+ str(RibgrandT15S)],['','','sub total', "$"+str(RibgrandT15St)],['','',"Tax 13%", "$"+str(Ribtax15)],['','',"Total", "$"+str(Ribtax15F)]], headers = ["Order", "Item Amnt", "Item Price","Total"]))
                                           print(msg)
                                           flag2 = True
-                                          break
                                           
+                                          continue
+                                           
+                                          
+                                   
 
                             
                                    if stud == 'n' or stud == 'N' :
@@ -71,13 +75,14 @@ if dinChoice == '1' or dinChoice == '2'  :
                                           RibgrandT15Stndtxf = RibgrandT15Stnd + RibgrandT15Stndtx
                                           print(*res, sep = ' ')
                                           print(tabulate([['Prime Rib dinner', quanDin1, din1, sumT1], [ "", "", "", ""], ['','','sub total', "$"+str(RibgrandT15Stnd)], ['','',"Tax 13%", "$"+str(RibgrandT15Stndtx)],['','',"Total", "$"+str(RibgrandT15Stndtxf)]], headers = ["Order", "Item Amnt", "Item Price","Total"]))  
-                                          break
+                                          print(msg)
+                                          continue
                                            
                                    elif stud != 'y' or 'Y' or 'n' or 'N' :
 
-                                          print("Incorrect response")           
-                            else:                     
-                                   break
+                                          print("Incorrect response")    
+                                          continue       
+                           
                                          
                                    
                                            
@@ -157,10 +162,10 @@ if dinChoice == '1' or dinChoice == '2'  :
                        flag1 = True 
                        break    
                 if conf1 != 'y' or 'Y' or 'n' or 'N':
-                       flag1 = False
-                       print("Invalid entryf") 
+                       flag1 = True
+                       print("Invalid entry") 
                 else:
-                       break      
+                       break   
                             
         elif dinChoice == '2':
             quanDin2 = float(input("How many of the turkey dinners would you like: "))
@@ -178,7 +183,7 @@ if dinChoice == '1' or dinChoice == '2'  :
                 elif conf2 == 'n' or conf2 == 'N' :
                        break    
                 elif conf2 != 'y' or 'Y' or 'n' or 'N':
-                       print("Invalid entry25")                
+                       print("Invalid entry")                
             
                 
             
