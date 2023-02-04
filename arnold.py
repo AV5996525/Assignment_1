@@ -17,15 +17,10 @@ prov = input("Enter your province: ").strip()
 pos = input("Enter your postal code: ").strip()
 spcInst = input("Enter any special delivery instructions: ")
 phNum = input("Enter your phone number: ").strip()
-
 receipt1 = [firName+" ", city+" ", phNum+" ", spcInst]
 receipt2 = [lasName+" ", prov+" ", pos+" ", '']
 res = "\n".join("{}{}".format(x,y) for x,y in zip(receipt1, receipt2))
-
-
-
 dinChoice = str(input("Our daily specials are: \n\t1.Prime Rib Dinner - $25.50 \n\t2.Turkey Dinner - $29.50\n"))
-
 if dinChoice == '1' or dinChoice == '2'  :
         if dinChoice == '1' :
             quanDin1 = float(input("How many of the Prime rib dinners would you like: "))             
@@ -37,6 +32,7 @@ if dinChoice == '1' or dinChoice == '2'  :
                 if conf1 == 'y' or conf1 == 'Y' :                              
                     flag1 = True
                     
+
                     if  sumT1 > disC1 :
                          
                             print("15 % discount activated!")
@@ -45,9 +41,9 @@ if dinChoice == '1' or dinChoice == '2'  :
                             print(str(Ribgrand15))         
                             print("Your sub total is: " + "$" + str(sumT1) + "\nYour 15% discount savings are: " + "$" + str(Ribdiscnt15))
                             print(str(firHead) + "\n" + str(quanDin1) + " X\t" + "Prime rib dinner\n" + "-----------------------------------\n" + "Your grand total is : " + "$" + str(Ribgrand15) + "\n-----------------------------------\n")
-                            
+                            flag2 = False
                             while True:
-                                   flag2 = False
+                                   
                                    stud = str(input("Are you a student? "))
                                    if stud == 'y' or stud == 'Y' :
                                           
@@ -59,15 +55,19 @@ if dinChoice == '1' or dinChoice == '2'  :
                                           print(*res, sep = ' ')
                                           print(tabulate([['Prime Rib dinner', quanDin1, din1, sumT1], ["10 % Student savings", '', '', '- $'+ str(RibgrandT15S)],['','','sub total', "$"+str(RibgrandT15St)],['','',"Tax 13%", "$"+str(Ribtax15)],['','',"Total", "$"+str(Ribtax15F)]], headers = ["Order", "Item Amnt", "Item Price","Total"]))
                                           print(msg)
-                                          flag2 = True
+                                          flag2 = False
                                           
-                                          continue
+                                          
+                                          while True:
+                                                exit
+                                                 
+                                           
                                            
                                           
                                    
 
                             
-                                   if stud == 'n' or stud == 'N' :
+                                   elif stud == 'n' or stud == 'N' :
                                           flag2 = True
                                           print("No student discount applicable.")
                                           RibgrandT15Stnd = Ribgrand15
@@ -76,7 +76,8 @@ if dinChoice == '1' or dinChoice == '2'  :
                                           print(*res, sep = ' ')
                                           print(tabulate([['Prime Rib dinner', quanDin1, din1, sumT1], [ "", "", "", ""], ['','','sub total', "$"+str(RibgrandT15Stnd)], ['','',"Tax 13%", "$"+str(RibgrandT15Stndtx)],['','',"Total", "$"+str(RibgrandT15Stndtxf)]], headers = ["Order", "Item Amnt", "Item Price","Total"]))  
                                           print(msg)
-                                          continue
+                                          while True:
+                                                exit
                                            
                                    elif stud != 'y' or 'Y' or 'n' or 'N' :
 
@@ -107,7 +108,7 @@ if dinChoice == '1' or dinChoice == '2'  :
                                          
                                           print(*res, sep = ' ')
                                           print(tabulate([['Prime Rib dinner', quanDin1, din1, sumT1], ["10 % Student savings", '', '', '- $'+ str(RibgrandT10S)],['','','sub total', "$"+str(RibgrandT10St)],['','',"Tax 13%", "$"+str(Ribtax10)],['','',"Total", "$"+str(Ribtax10F)]], headers = ["Order", "Item Amnt", "Item Price","Total"]))
-                                          break
+                                          continue
                                    if stud == 'n' or stud == 'N' :
                                           flag3 = True
                                           print("No student discount applicable.")
@@ -116,9 +117,10 @@ if dinChoice == '1' or dinChoice == '2'  :
                                           RibgrandT10Stndtxf = RibgrandT10Stndtx + RibgrandT10
                                           print(*res, sep = ' ')
                                           print(tabulate([['Prime Rib dinner', quanDin1, din1, sumT1], [ "", "", "", ""], ['','','sub total', "$"+str(RibgrandT10Stnd)], ['','',"Tax 13%", "$"+str(RibgrandT10Stndtx)],['','',"Total", "$"+str(RibgrandT10Stndtxf)]], headers = ["Order", "Item Amnt", "Item Price","Total"]))  
-                                          break 
+                                          continue 
                                    if stud != 'y' or 'Y' or 'n' or 'N' :
                                           print("Incorrect response")
+                                          continue
                     elif sumT1 < disC :
                      
                             print("5% discount granted!")
@@ -152,7 +154,7 @@ if dinChoice == '1' or dinChoice == '2'  :
                                           print(tabulate([['Prime Rib dinner', quanDin1, din1, sumT1], [ "", "", "", ""], ['','','sub total', "$"+str(RibgrandT5Stnd)], ['','',"Tax 13%", "$"+str(RibgrandT5Stndtx)],['','',"Total", "$"+str(RibgrandT5Stndtxf)]], headers = ["Order", "Item Amnt", "Item Price","Total"]))  
                                           break
                                    if stud != 'y' or 'Y' or 'n' or 'N' :
-                                          print("Incorrect response")                   
+                                          print("Incorrect response1")                   
 
                 
                 
@@ -160,12 +162,13 @@ if dinChoice == '1' or dinChoice == '2'  :
                                                                
                 if conf1 == 'n' or conf1 == 'N' :
                        flag1 = True 
-                       break    
+                       continue    
                 if conf1 != 'y' or 'Y' or 'n' or 'N':
-                       flag1 = True
                        print("Invalid entry") 
-                else:
-                       break   
+                       continue
+                       flag1 = True
+                       
+                
                             
         elif dinChoice == '2':
             quanDin2 = float(input("How many of the turkey dinners would you like: "))
