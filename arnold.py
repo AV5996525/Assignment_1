@@ -134,8 +134,8 @@ def resta ():
                                                         Ribdiscnt5 = (.05*sumT1)
                                                         Ribgrand5 = (sumT1 - Ribdiscnt5)
                                                         
-                                                        print("Your sub total is: " + "$" + str(sumT1) + "\nYour 5% discount savings are: " + "$" + str(Ribdiscnt5))
-                                                        print(str(firHead) + "\n" + str(quanDin1) + " X\t" + "Prime rib dinner\n" + "-----------------------------------\n" + "Your grand total is : " + "$" + str(Ribgrand5) + "\n-----------------------------------\n")
+                                                        print("Your sub total is: " + "$" + str(round(sumT1, 2)) + "\nYour 5% discount savings are: " + "$" + str(round(Ribdiscnt5, 2)))
+                                                        print(str(firHead) + "\n" + str(quanDin1) + " X\t" + "Prime rib dinner\n" + "-----------------------------------\n" + "Your grand total is : " + "$" + str(round(Ribgrand5, 2)) + "\n-----------------------------------\n")
                                                         
                                                         while True:
                                                                flag4 = False
@@ -149,7 +149,7 @@ def resta ():
                                                                       Ribtax5F = Ribtax5 + RibgrandT5St
                                                                       
                                                                       print(*res, sep = ' ')
-                                                                      print(tabulate([['Prime Rib dinner', quanDin1, din1, sumT1], ["10 % Student savings", '', '', '- $'+ str(RibgrandT5S)],['','','sub total', "$"+str(RibgrandT5St)],['','',"Tax 13%", "$"+str(Ribtax5)],['','',"Total", "$"+str(Ribtax5F)]], headers = ["Order", "Item Amnt", "Item Price","Total"]))
+                                                                      print(tabulate([['Prime Rib dinner', str(quanDin1), str(din1), "$" + str(round(sumT1, 2))], ["10 % Student savings", '', '', '- $'+ str(round(RibgrandT5S, 2))],['','','sub total', "$" + str(round(RibgrandT5St))],['','',"Tax 13%", "$" + str(round(Ribtax5, 2))],['','',"Total", "$" + str(round(Ribtax5F, 2))]], headers = ["Order", "Item Amnt", "Item Price","Total"]))
                                                                       while True:
                                                                        exit
                                                                if stud == 'n' or stud == 'N' :
@@ -159,7 +159,7 @@ def resta ():
                                                                       RibgrandT5Stndtx = RibgrandT5Stnd * hst
                                                                       RibgrandT5Stndtxf = RibgrandT5Stndtx + RibgrandT5Stnd
                                                                       print(*res, sep = ' ')
-                                                                      print(tabulate([['Prime Rib dinner', quanDin1, din1, sumT1], [ "", "", "", ""], ['','','sub total', "$"+str(RibgrandT5Stnd)], ['','',"Tax 13%", "$"+str(RibgrandT5Stndtx)],['','',"Total", "$"+str(RibgrandT5Stndtxf)]], headers = ["Order", "Item Amnt", "Item Price","Total"]))  
+                                                                      print(tabulate([['Prime Rib dinner', quanDin1, din1, "$" + sumT1], [ "", "", "", ""], ['','','sub total', "$" + str(round(RibgrandT5Stnd))], ['','',"Tax 13%", "$" + str(round(RibgrandT5Stndtx, 2))],['','',"Total", "$" + str(round(RibgrandT5Stndtxf, 2))]], headers = ["Order", "Item Amnt", "Item Price","Total"]))  
                                                                       while True:
                                                                        exit
                                                                if stud != 'y' or 'Y' or 'n' or 'N' :
@@ -196,7 +196,7 @@ def resta ():
                                           Tudiscnt10 = (.10*sumT2)
                                           Tugrand10 = (sumT2 - Tudiscnt10)
                                                  
-                                          print("Your sub total is: " + "$" + str(sumT2) + "\nYour 10% discount savings are: " + "$" + str(Tudiscnt10))
+                                          print("Your sub total is: " + "$" + str(sumT2) + "\nYour 10% discount savings are: " + "$" + str(round(Tudiscnt10, 2)))
                                           print(str(firHead) + "\n" + str(quanDin2) + " X\t" + "Turkey dinner\n" + "-----------------------------------\n" + "Your grand total is : " + "$" + str(round(Tugrand10, 2)) + "\n-----------------------------------\n")
                                           flag8 = False
                                           while True:
