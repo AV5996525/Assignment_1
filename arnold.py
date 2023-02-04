@@ -15,7 +15,7 @@
 def resta ():                                                                 #defining this entire program as a function, for restarting the program if a certain condition like the customer wanting to restart their order.
        from tabulate import tabulate
 
-       din1 = 25.50
+       din1 = 25.50                        #establishing fixed variables with values that do not change regardless of condition
        din2 = 29.50
        hst = .13
        studIc = .10
@@ -36,12 +36,12 @@ def resta ():                                                                 #d
        res = "\n".join("{}{}".format(x,y) for x,y in zip(receipt1, receipt2))
 
        dinChoice = str(input("Our daily specials are: \n\t1.Prime Rib Dinner - $25.50 \n\t2.Turkey Dinner - $29.50\n"))
-       if dinChoice == '1' or dinChoice == '2'  :
+       if dinChoice == '1' or dinChoice == '2'  :                                                                       #this if statement will direct the user into one of two scenarios for each menu choice
               if dinChoice == '1' :
                      quanDin1 = float(input("How many of the Prime rib dinners would you like: "))             
                      sumT1 = (quanDin1 * din1)
                      flag1 = False
-                     while True:
+                     while True:                                                                                        #intitializing outter layer loop to prompt user to confirm their order with three different scenarios
                             conf1 = str(input("Are you sure you would like to order: \n" + str(quanDin1) + "\tX Prime rib Dinners:" + "\n[Yes or No]: "))
                             if conf1 == 'y' or conf1 == 'Y' :                              
                                    flag1 = True
@@ -54,7 +54,7 @@ def resta ():                                                                 #d
                                           print("Your sub total is: " + "$" + str(round(sumT1,2)) + "\nYour 15% discount savings are: " + "$" + str(round(Ribdiscnt15,2)))
                                           print(str(firHead) + "\n" + str(quanDin1) + " X\t" + "Prime rib dinner\n" + "-----------------------------------\n" + "Your grand total is : " + "$" + str(round(Ribgrand15,2)) + "\n-----------------------------------\n")
                                           flag2 = False
-                                          while True:
+                                          while True:                                                                      #Inner most loop that will continue to prompt user to anser if they are a student
                                                                
                                                  stud = str(input("Are you a student? "))
                                                  if stud == 'y' or stud == 'Y' :
