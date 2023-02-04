@@ -1,3 +1,16 @@
+#Name:          arnold.py
+#Author:        AJ Varatharajan
+#Date Created:  February 2, 2023
+#Date Last Modified: February 4, 2023
+
+#Purpose: 
+#
+#This program will accept user input to fill out fields regarding their personal information.
+#The user will be able to select one of two items. With one item, but as many servings as desired.
+#program will ask user to confirm their order and student status. It will prompt for an appropriate entry using y, Y, n, N only.
+#A receipt will be outputted once the user completes the order.
+
+
 
 from tabulate import tabulate
 
@@ -20,6 +33,7 @@ phNum = input("Enter your phone number: ").strip()
 receipt1 = [firName+" ", city+" ", phNum+" ", spcInst]
 receipt2 = [lasName+" ", prov+" ", pos+" ", '']
 res = "\n".join("{}{}".format(x,y) for x,y in zip(receipt1, receipt2))
+
 dinChoice = str(input("Our daily specials are: \n\t1.Prime Rib Dinner - $25.50 \n\t2.Turkey Dinner - $29.50\n"))
 if dinChoice == '1' or dinChoice == '2'  :
         if dinChoice == '1' :
@@ -53,7 +67,7 @@ if dinChoice == '1' or dinChoice == '2'  :
                                           Ribtax15 = (hst*RibgrandT15St)
                                           Ribtax15F = Ribtax15 + RibgrandT15St
                                           print(*res, sep = ' ')
-                                          print(tabulate([['Prime Rib dinner', quanDin1, '$' + din1, '$' + round(sumT1,2)], ["10 % Student savings", '', '', '- $'+ str(round(RibgrandT15S,2))],['','','sub total', "$"+str(round(RibgrandT15St, 2))],['','',"Tax 13%", "$"+str(round(Ribtax15, 2))],['','',"Total", "$"+str(round(Ribtax15F, 2))]], headers = ["Order", "Item Amnt", "Item Price","Total"]))
+                                          print(tabulate([['Prime Rib dinner', quanDin1, '$' + str(din1), '$' + str(round(sumT1,2))], ["10 % Student savings", '', '', '- $'+ str(round(RibgrandT15S,2))],['','','sub total', "$"+str(round(RibgrandT15St, 2))],['','',"Tax 13%", "$"+str(round(Ribtax15, 2))],['','',"Total", "$"+str(round(Ribtax15F, 2))]], headers = ["Order", "Item Amnt", "Item Price","Total"]))
                                           print(msg)
                                           flag2 = False
                                           
@@ -166,9 +180,9 @@ if dinChoice == '1' or dinChoice == '2'  :
                    
                                                            
                 if conf1 == 'n' or conf1 == 'N' :
-                       flag1 = True 
-                       while True:
-                           exit    
+                       flag1 = True
+                       break 
+                          
                 if conf1 != 'y' or 'Y' or 'n' or 'N':
                        print("Invalid entry") 
                        continue
