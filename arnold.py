@@ -187,7 +187,7 @@ def resta ():                                                                 #d
                      quanDin2 = float(input("How many of the turkey dinners would you like: "))
                      sumT2 = (quanDin2 * din2)
                      flag5 = False
-                     while True:
+                     while True:                                                     #intitializing outter layer loop to prompt user to confirm their order with three different scenarios
                             conf2 = input("Are you sure you would like to order: \n" + str(quanDin2) + "\tX  Turkey Dinners:" + "\n[Yes or No]: ")
                             if conf2 == 'y' or conf2 == 'Y' :
                                    flag5 = True                     
@@ -200,7 +200,7 @@ def resta ():                                                                 #d
                                           print("Your sub total is: " + "$" + str(round(sumT2, 2)) + "\nYour 10% discount savings are: " + "$" + str(round(Tudiscnt10, 2)))
                                           print(str(firHead) + "\n" + str(quanDin2) + " X\t" + "Turkey dinner\n" + "-----------------------------------\n" + "Your grand total is : " + "$" + str(round(Tugrand10, 2)) + "\n-----------------------------------\n")
                                           flag8 = False
-                                          while True:
+                                          while True:                                #intitializing inner layer loop to prompt user to confirm their student status
                                                  
                                                  stud = str(input("Are you a student? "))
                                                  if stud == 'y' or stud == 'Y' :
@@ -248,7 +248,7 @@ def resta ():                                                                 #d
                                           print("Your sub total is: " + "$" + str(round(sumT2, 2)) + "\nYour 5% discount savings are: " + "$" + str(round(Tudiscnt5, 2)))
                                           print(str(firHead) + "\n" + str(quanDin2) + " X\t" + "Turkey dinner\n" + "-----------------------------------\n" + "Your grand total is : " + "$" + str(round(Tugrand5, 2)) + "\n-----------------------------------\n")
                                           flag7 = False
-                                          while True:
+                                          while True: #intitializing inner layer loop to prompt user to confirm their student status
                                                  
                                                  stud = str(input("Are you a student? "))
                                                  if stud == 'y' or stud == 'Y' :
@@ -297,7 +297,7 @@ def resta ():                                                                 #d
                                           print("Your sub total is: " + "$" + str(round(sumT2, 2)) + "\nYour 15% discount savings are: " + "$" + str(round(Tudiscnt15, 2)))
                                           print(str(firHead) + "\n" + str(quanDin2) + " X\t" + "Turkey dinner\n" + "-----------------------------------\n" + "Your grand total is : " + "$" + str(round(Tugrand15, 2)) + "\n-----------------------------------\n")
                                           flag6 = False
-                                          while True:
+                                          while True: #intitializing inner layer loop to prompt user to confirm their student status
                                                  
                                                  stud = str(input("Are you a student? "))
                                                  if stud == 'y' or stud == 'Y' :
