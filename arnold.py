@@ -357,6 +357,4 @@ def resta ():                                                                 #d
 
 while True:   #program will continously run
       resta()
-
-
-
+      
