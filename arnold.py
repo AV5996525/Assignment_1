@@ -46,8 +46,10 @@ if dinChoice == '1' or dinChoice == '2'  :
                             print(str(firHead) + "\n" + str(quanDin1) + " X\t" + "Prime rib dinner\n" + "-----------------------------------\n" + "Your grand total is : " + "$" + str(Ribgrand15) + "\n-----------------------------------\n")
                             
                             while True:
+                                   flag2 = False
                                    stud = str(input("Are you a student? "))
                                    if stud == 'y' or stud == 'Y' :
+                                          flag2 = True
                                           print("Enjoy a student discount")
                                           RibgrandT15S = (Ribgrand15 * studIc)
                                           RibgrandT15St = (Ribgrand15 - RibgrandT15S)  
@@ -76,8 +78,10 @@ if dinChoice == '1' or dinChoice == '2'  :
                             print(str(firHead) + "\n" + str(quanDin1) + " X\t" + "Prime rib dinner\n" + "-----------------------------------\n" + "Your grand total is : " + "$" + str(RibgrandT10) + "\n-----------------------------------\n")
                             
                             while True:
+                                   flag3 = False
                                    stud = str(input("Are you a student? "))
                                    if stud == 'y' or stud == 'Y' :
+                                          flag3 = True
                                           print("Enjoy a student discount")
                                           RibgrandT10S = (RibgrandT10 * studIc)
                                           RibgrandT10St = (RibgrandT10 - RibgrandT10S)  
@@ -107,8 +111,10 @@ if dinChoice == '1' or dinChoice == '2'  :
                             print(str(firHead) + "\n" + str(quanDin1) + " X\t" + "Prime rib dinner\n" + "-----------------------------------\n" + "Your grand total is : " + "$" + str(Ribgrand5) + "\n-----------------------------------\n")
                                  
                             while True:
+                                   flag4 = False
                                    stud = str(input("Are you a student? "))
                                    if stud == 'y' or stud == 'Y' :
+                                          flag4 = True
                                           print("Enjoy a student discount")
                                           RibgrandT5S = (Ribgrand5 * studIc)
                                           RibgrandT5St = (Ribgrand5 - RibgrandT5S)  
