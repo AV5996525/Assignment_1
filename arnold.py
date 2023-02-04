@@ -8,10 +8,11 @@
 #This program will accept user input to fill out fields regarding their personal information.
 #The user will be able to select one of two items. With one item, but as many servings as desired.
 #program will ask user to confirm their order and student status. It will prompt for an appropriate entry using y, Y, n, N only.
+#If user does not confirm the order, they CAN re enter their selection.
 #A receipt will be outputted once the user completes the order.
 
 
-def resta ():
+def resta ():                                                                 #defining this entire program as a function, for restarting the program if a certain condition like the customer wanting to restart their order.
        from tabulate import tabulate
 
        din1 = 25.50
@@ -149,7 +150,7 @@ def resta ():
                                                                       Ribtax5F = Ribtax5 + RibgrandT5St
                                                                       
                                                                       print(*res, sep = ' ')
-                                                                      print(tabulate([['Prime Rib dinner', str(quanDin1), str(din1), "$" + str(round(sumT1, 2))], ["10 % Student savings", '', '', '- $'+ str(round(RibgrandT5S, 2))],['','','sub total', "$" + str(round(RibgrandT5St))],['','',"Tax 13%", "$" + str(round(Ribtax5, 2))],['','',"Total", "$" + str(round(Ribtax5F, 2))]], headers = ["Order", "Item Amnt", "Item Price","Total"]))
+                                                                      print(tabulate([['Prime Rib dinner', str(quanDin1), "$" + str(din1), "$" + str(round(sumT1, 2))], ["10 % Student savings", '', '', '- $'+ str(round(RibgrandT5S, 2))],['','','sub total', "$" + str(round(RibgrandT5St, 2))],['','',"Tax 13%", "$" + str(round(Ribtax5, 2))],['','',"Total", "$" + str(round(Ribtax5F, 2))]], headers = ["Order", "Item Amnt", "Item Price","Total"]))
                                                                       while True:
                                                                        exit
                                                                if stud == 'n' or stud == 'N' :
@@ -159,7 +160,7 @@ def resta ():
                                                                       RibgrandT5Stndtx = RibgrandT5Stnd * hst
                                                                       RibgrandT5Stndtxf = RibgrandT5Stndtx + RibgrandT5Stnd
                                                                       print(*res, sep = ' ')
-                                                                      print(tabulate([['Prime Rib dinner', quanDin1, din1, "$" + sumT1], [ "", "", "", ""], ['','','sub total', "$" + str(round(RibgrandT5Stnd))], ['','',"Tax 13%", "$" + str(round(RibgrandT5Stndtx, 2))],['','',"Total", "$" + str(round(RibgrandT5Stndtxf, 2))]], headers = ["Order", "Item Amnt", "Item Price","Total"]))  
+                                                                      print(tabulate([['Prime Rib dinner', quanDin1, "$" + str(din1), "$" + str(round(sumT1, 2))], [ "", "", "", ""], ['','','sub total', "$" + str(round(RibgrandT5Stnd, 2))], ['','',"Tax 13%", "$" + str(round(RibgrandT5Stndtx, 2))],['','',"Total", "$" + str(round(RibgrandT5Stndtxf, 2))]], headers = ["Order", "Item Amnt", "Item Price","Total"]))  
                                                                       while True:
                                                                        exit
                                                                if stud != 'y' or 'Y' or 'n' or 'N' :
@@ -171,7 +172,7 @@ def resta ():
                                    
                                                                              
                             if conf1 == 'n' or conf1 == 'N' :                               
-                                   resta()
+                                   resta() #certain condition like the customer wanting to restart their order.
                                    
                                                  
                                           
@@ -196,7 +197,7 @@ def resta ():
                                           Tudiscnt10 = (.10*sumT2)
                                           Tugrand10 = (sumT2 - Tudiscnt10)
                                                  
-                                          print("Your sub total is: " + "$" + str(sumT2) + "\nYour 10% discount savings are: " + "$" + str(round(Tudiscnt10, 2)))
+                                          print("Your sub total is: " + "$" + str(round(sumT2, 2)) + "\nYour 10% discount savings are: " + "$" + str(round(Tudiscnt10, 2)))
                                           print(str(firHead) + "\n" + str(quanDin2) + " X\t" + "Turkey dinner\n" + "-----------------------------------\n" + "Your grand total is : " + "$" + str(round(Tugrand10, 2)) + "\n-----------------------------------\n")
                                           flag8 = False
                                           while True:
@@ -230,7 +231,7 @@ def resta ():
                                                         TugrandT10Stndtx = Tugrand10 * hst
                                                         TugrandT10Stndtxf = TugrandT10Stnd + TugrandT10Stndtx
                                                         print(*res, sep = ' ')
-                                                        print(tabulate([['Turkey dinner', str(quanDin2), '$' + str(round(din2, 2)), '$' + str(sumT2)], [ "", "", "", ""], ['','','sub total', "$" + str(round(TugrandT10Stnd, 2))], ['','',"Tax 13%", "$" + str(round(TugrandT10Stndtx, 2))],['','',"Total", "$" + str(round(TugrandT10Stndtxf, 2))]], headers = ["Order", "Item Amnt", "Item Price","Total"]))  
+                                                        print(tabulate([['Turkey dinner', str(quanDin2), '$' + str(round(din2, 2)), '$' + str(round(sumT2, 2))], [ "", "", "", ""], ['','','sub total', "$" + str(round(TugrandT10Stnd, 2))], ['','',"Tax 13%", "$" + str(round(TugrandT10Stndtx, 2))],['','',"Total", "$" + str(round(TugrandT10Stndtxf, 2))]], headers = ["Order", "Item Amnt", "Item Price","Total"]))  
                                                         print(msg)
                                                         while True:
                                                          exit
@@ -340,7 +341,7 @@ def resta ():
                                    
                             if conf2 == 'n' or conf2 == 'N' :
                                     
-                                   resta()   
+                                   resta()   #certain condition like the customer wanting to restart their order.
                             if conf2 != 'y' or 'Y' or 'n' or 'N':
                                    
                                    print("Invalid entry")
@@ -354,7 +355,7 @@ def resta ():
               print("Invalid choice, please select choice 1 or 2.")       
 
 
-while True:
+while True:   #program will continously run
       resta()
 
 
