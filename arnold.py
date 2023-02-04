@@ -31,9 +31,10 @@ if dinChoice == '1' or dinChoice == '2'  :
             quanDin1 = float(input("How many of the Prime rib dinners would you like: "))             
             sumT1 = (quanDin1 * din1)
             while True:
+                flag1 = False
                 conf1 = str(input("Are you sure you would like to order: \n" + str(quanDin1) + "\tX Prime rib Dinners:" + "\n[Yes or No]: "))
                 if conf1 == 'y' or conf1 == 'Y' :                              
-                 
+                    flag1 = True
                     
                     if  sumT1 > disC1 :
                          
@@ -43,7 +44,7 @@ if dinChoice == '1' or dinChoice == '2'  :
                             print(str(Ribgrand15))         
                             print("Your sub total is: " + "$" + str(sumT1) + "\nYour 15% discount savings are: " + "$" + str(Ribdiscnt15))
                             print(str(firHead) + "\n" + str(quanDin1) + " X\t" + "Prime rib dinner\n" + "-----------------------------------\n" + "Your grand total is : " + "$" + str(Ribgrand15) + "\n-----------------------------------\n")
-                            break
+                            
                             while True:
                                    stud = str(input("Are you a student? "))
                                    if stud == 'y' or stud == 'Y' :
@@ -73,7 +74,7 @@ if dinChoice == '1' or dinChoice == '2'  :
                             RibgrandT10 = (sumT1 - Ribdiscnt10)
                             print("Your sub total is: " + "$" + str(sumT1) + "\nYour 10% discount savings are: " + "$" + str(Ribdiscnt10))
                             print(str(firHead) + "\n" + str(quanDin1) + " X\t" + "Prime rib dinner\n" + "-----------------------------------\n" + "Your grand total is : " + "$" + str(RibgrandT10) + "\n-----------------------------------\n")
-                            break
+                            
                             while True:
                                    stud = str(input("Are you a student? "))
                                    if stud == 'y' or stud == 'Y' :
@@ -104,7 +105,7 @@ if dinChoice == '1' or dinChoice == '2'  :
                             
                             print("Your sub total is: " + "$" + str(sumT1) + "\nYour 5% discount savings are: " + "$" + str(Ribdiscnt5))
                             print(str(firHead) + "\n" + str(quanDin1) + " X\t" + "Prime rib dinner\n" + "-----------------------------------\n" + "Your grand total is : " + "$" + str(Ribgrand5) + "\n-----------------------------------\n")
-                            break      
+                                 
                             while True:
                                    stud = str(input("Are you a student? "))
                                    if stud == 'y' or stud == 'Y' :
@@ -151,7 +152,7 @@ if dinChoice == '1' or dinChoice == '2'  :
                 elif conf2 == 'n' or conf2 == 'N' :
                        break    
                 elif conf2 != 'y' or 'Y' or 'n' or 'N':
-                       print("Invalid entry")                
+                       print("Invalid entry25")                
             else:
                    print("ok")
 elif dinChoice.isalpha() :
