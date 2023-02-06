@@ -114,6 +114,7 @@ def resta ():                                                                 #d
                                                                
                                                                       print(*res, sep = ' ')
                                                                       print(tabulate([['Prime Rib dinner', str(quanDin1), '$' + str(din1), '$' + str(round(sumT1, 2))], ["10 % Student savings", '', '', '- $'+ str(round(RibgrandT10S, 2))],['','','sub total', "$" + str(round(RibgrandT10St, 2))],['','',"Tax 13%", "$" + str(round(Ribtax10, 2))],['','',"Total", "$" + str(round(Ribtax10F, 2))]], headers = ["Order", "Item Amnt", "Item Price","Total"]))
+                                                                      print(msg)
                                                                       while True:
                                                                        exit
                                                                if stud == 'n' or stud == 'N' :
@@ -124,6 +125,7 @@ def resta ():                                                                 #d
                                                                       RibgrandT10Stndtxf = RibgrandT10Stndtx + RibgrandT10
                                                                       print(*res, sep = ' ')
                                                                       print(tabulate([['Prime Rib dinner', str(quanDin1), '$' + str(din1), '$' + str(round(sumT1, 2))], [ "", "", "", ""], ['','','sub total', "$" + str(round(RibgrandT10Stnd, 2))], ['','',"Tax 13%", "$" + str(round(RibgrandT10Stndtx, 2))],['','',"Total", "$" + str(round(RibgrandT10Stndtxf))]], headers = ["Order", "Item Amnt", "Item Price","Total"]))  
+                                                                      print(msg)
                                                                       while True:
                                                                        exit
                                                                if stud != 'y' or 'Y' or 'n' or 'N' :
@@ -151,6 +153,7 @@ def resta ():                                                                 #d
                                                                       
                                                                       print(*res, sep = ' ')
                                                                       print(tabulate([['Prime Rib dinner', str(quanDin1), "$" + str(din1), "$" + str(round(sumT1, 2))], ["10 % Student savings", '', '', '- $'+ str(round(RibgrandT5S, 2))],['','','sub total', "$" + str(round(RibgrandT5St, 2))],['','',"Tax 13%", "$" + str(round(Ribtax5, 2))],['','',"Total", "$" + str(round(Ribtax5F, 2))]], headers = ["Order", "Item Amnt", "Item Price","Total"]))
+                                                                      print(msg)
                                                                       while True:
                                                                        exit
                                                                if stud == 'n' or stud == 'N' :         # no student status and no discount applied scenario
@@ -161,6 +164,7 @@ def resta ():                                                                 #d
                                                                       RibgrandT5Stndtxf = RibgrandT5Stndtx + RibgrandT5Stnd
                                                                       print(*res, sep = ' ')
                                                                       print(tabulate([['Prime Rib dinner', quanDin1, "$" + str(din1), "$" + str(round(sumT1, 2))], [ "", "", "", ""], ['','','sub total', "$" + str(round(RibgrandT5Stnd, 2))], ['','',"Tax 13%", "$" + str(round(RibgrandT5Stndtx, 2))],['','',"Total", "$" + str(round(RibgrandT5Stndtxf, 2))]], headers = ["Order", "Item Amnt", "Item Price","Total"]))  
+                                                                      print(msg)
                                                                       while True:
                                                                        exit
                                                                if stud != 'y' or 'Y' or 'n' or 'N' :
