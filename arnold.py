@@ -21,43 +21,43 @@ def resta ():                                                                 #d
        studIc = .10
        disC = 100
        disC1 = 500
-       firHead = ["QTY", "ITEM"]
-       msg = "Thanks for choosing Arnold's Amazing Eats II"
-       print("Welcome to Arnold's Amazing Eats II \nHome of the best food in Waterloo! \nThis app will simply help you make an order!")
-       firName = input("Enter your first name: ").strip()
-       lasName = input("Enter your last name: ").strip()
-       city = input("Enter your current city: ").strip()
-       prov = input("Enter your province: ").strip()
-       pos = input("Enter your postal code: ").strip()
-       spcInst = input("Enter any special delivery instructions: ")
-       phNum = input("Enter your phone number: ").strip()
-       receipt1 = [firName+" ", city+" ", phNum+" ", spcInst]
-       receipt2 = [lasName+" ", prov+" ", pos+" ", '']
-       res = "\n".join("{}{}".format(x,y) for x,y in zip(receipt1, receipt2))
+       firHead = ["QTY", "ITEM"]       #receipt header
+       msg = "Thanks for choosing Arnold's Amazing Eats II"                   #Thank you message to be printed at end of completed order
+       print("Welcome to Arnold's Amazing Eats II \nHome of the best food in Waterloo! \nThis app will simply help you make an order!")   #welcome greeting
+       firName = input("Enter your first name: ").strip()               #user enters name
+       lasName = input("Enter your last name: ").strip()                #user enter last name
+       city = input("Enter your current city: ").strip()                #user enter city
+       prov = input("Enter your province: ").strip()                         #user enter province
+       pos = input("Enter your postal code: ").strip()                       #user enter postal
+       spcInst = input("Enter any special delivery instructions: ")                 #user enter delivery instruction
+       phNum = input("Enter your phone number: ").strip()                           #user enter phone number
+       receipt1 = [firName+" ", city+" ", phNum+" ", spcInst]                       #receipt containing stored variable info
+       receipt2 = [lasName+" ", prov+" ", pos+" ", '']                              #receipt containing stored variable info
+       res = "\n".join("{}{}".format(x,y) for x,y in zip(receipt1, receipt2))       #joining receipts together with join function
 
-       dinChoice = str(input("Our daily specials are: \n\t1.Prime Rib Dinner - $25.50 \n\t2.Turkey Dinner - $29.50\n"))
+       dinChoice = str(input("Our daily specials are: \n\t1.Prime Rib Dinner - $25.50 \n\t2.Turkey Dinner - $29.50\n")) #display choices and collect user input
        if dinChoice == '1' or dinChoice == '2'  :                                                                       #this if statement will direct the user into one of two scenarios for each menu choice
               if dinChoice == '1' :
-                     quanDin1 = float(input("How many of the Prime rib dinners would you like: "))             
+                     quanDin1 = float(input("How many of the Prime rib dinners would you like: "))             #Sub if statement, asking how many of prime rib requested
                      sumT1 = (quanDin1 * din1)
                      flag1 = False
                      while True:                                                                                        #intitializing outter layer loop to prompt user to confirm their order with three different scenarios
-                            conf1 = str(input("Are you sure you would like to order: \n" + str(quanDin1) + "\tX Prime rib Dinners:" + "\n[Yes or No]: "))
+                            conf1 = str(input("Are you sure you would like to order: \n" + str(quanDin1) + "\tX Prime rib Dinners:" + "\n[Yes or No]: "))   #confirmation, within loop, will repeat until user enters correct response
                             if conf1 == 'y' or conf1 == 'Y' :                              
                                    flag1 = True
                                    
 
-                                   if  sumT1 > disC1 :             
+                                   if  sumT1 > disC1 :                              #if sub total exceeds 500              
                                           Ribdiscnt15 = (.15*sumT1)
                                           Ribgrand15 = (sumT1 - Ribdiscnt15)
                                                                
-                                          print("Your sub total is: " + "$" + str(round(sumT1,2)) + "\nYour 15% discount savings are: " + "$" + str(round(Ribdiscnt15,2)))
+                                          print("Your sub total is: " + "$" + str(round(sumT1,2)) + "\nYour 15% discount savings are: " + "$" + str(round(Ribdiscnt15,2)))  #printing out receipt with 2 decimal places and correct format $
                                           print(str(firHead) + "\n" + str(quanDin1) + " X\t" + "Prime rib dinner\n" + "-----------------------------------\n" + "Your grand total is : " + "$" + str(round(Ribgrand15,2)) + "\n-----------------------------------\n")
                                           flag2 = False
                                           while True:                                                                      #Inner most loop that will continue to prompt user to anser if they are a student
                                                                
-                                                 stud = str(input("Are you a student? "))
-                                                 if stud == 'y' or stud == 'Y' :
+                                                 stud = str(input("Are you a student? "))    #collecting input regarding if you are a student
+                                                 if stud == 'y' or stud == 'Y' :              #if user enters 'y' or 'Y' will apply student discount
                                                                       
                                                         print("Enjoy a student discount")
                                                         RibgrandT15S = (Ribgrand15 * studIc)
@@ -73,7 +73,7 @@ def resta ():                                                                 #d
                                                                              
                                                                       
                                                                                                                
-                                                 elif stud == 'n' or stud == 'N' :
+                                                 elif stud == 'n' or stud == 'N' :            #if user inputs n or N they will not get discount and the calculation change
                                                         flag2 = True
                                                         print("No student discount applicable.")
                                                         RibgrandT15Stnd = Ribgrand15
@@ -85,7 +85,7 @@ def resta ():                                                                 #d
                                                         while True:
                                                           exit
                                                                       
-                                                 elif stud != 'y' or 'Y' or 'n' or 'N' :
+                                                 elif stud != 'y' or 'Y' or 'n' or 'N' :   # if user input isn't y or Y or n or N
 
                                                      print("Incorrect response")    
                                                      continue       
@@ -94,7 +94,7 @@ def resta ():                                                                 #d
                                                                
                                                                       
                                                                
-                                   elif sumT1 >= disC and disC1 > sumT1 :        
+                                   elif sumT1 >= disC and disC1 > sumT1 :       #setting condition for if sub total is between 500 and 100 to apply 10 percent discount 
                                                         print("Current selection: ")
                                                         Ribdiscnt10 = (.10*sumT1)
                                                         RibgrandT10 = (sumT1 - Ribdiscnt10)
@@ -138,9 +138,9 @@ def resta ():                                                                 #d
                                                         print("Your sub total is: " + "$" + str(round(sumT1, 2)) + "\nYour 5% discount savings are: " + "$" + str(round(Ribdiscnt5, 2)))
                                                         print(str(firHead) + "\n" + str(quanDin1) + " X\t" + "Prime rib dinner\n" + "-----------------------------------\n" + "Your grand total is : " + "$" + str(round(Ribgrand5, 2)) + "\n-----------------------------------\n")
                                                         
-                                                        while True:
+                                                        while True: #intializing inner loop to repeat student status question
                                                                flag4 = False
-                                                               stud = str(input("Are you a student? "))
+                                                               stud = str(input("Are you a student? ")) #user to confirm student status, will loop until y, Y, n, N
                                                                if stud == 'y' or stud == 'Y' :
                                                                       flag4 = True
                                                                       print("Enjoy a student discount")
@@ -153,7 +153,7 @@ def resta ():                                                                 #d
                                                                       print(tabulate([['Prime Rib dinner', str(quanDin1), "$" + str(din1), "$" + str(round(sumT1, 2))], ["10 % Student savings", '', '', '- $'+ str(round(RibgrandT5S, 2))],['','','sub total', "$" + str(round(RibgrandT5St, 2))],['','',"Tax 13%", "$" + str(round(Ribtax5, 2))],['','',"Total", "$" + str(round(Ribtax5F, 2))]], headers = ["Order", "Item Amnt", "Item Price","Total"]))
                                                                       while True:
                                                                        exit
-                                                               if stud == 'n' or stud == 'N' :
+                                                               if stud == 'n' or stud == 'N' :         # no student status and no discount applied scenario
                                                                       flag4 = True
                                                                       print("No student discount applicable.")
                                                                       RibgrandT5Stnd = Ribgrand5
@@ -250,7 +250,7 @@ def resta ():                                                                 #d
                                           flag7 = False
                                           while True: #intitializing inner layer loop to prompt user to confirm their student status
                                                  
-                                                 stud = str(input("Are you a student? "))
+                                                 stud = str(input("Are you a student? "))          #user to confirm student status, will loop until y, Y, n, N
                                                  if stud == 'y' or stud == 'Y' :
                                                         flag7 = True
                                                         
@@ -272,7 +272,7 @@ def resta ():                                                                 #d
                                                  
 
                                           
-                                                 elif stud == 'n' or stud == 'N' :
+                                                 elif stud == 'n' or stud == 'N' :  #if user inputs n or N, no student discount calculations applied               
                                                         flag7 = True
                                                         print("No student discount applicable.")
                                                         TugrandT5Stnd = Tugrand5
@@ -299,7 +299,7 @@ def resta ():                                                                 #d
                                           flag6 = False
                                           while True: #intitializing inner layer loop to prompt user to confirm their student status
                                                  
-                                                 stud = str(input("Are you a student? "))
+                                                 stud = str(input("Are you a student? "))   #user to confirm student status, will loop until y, Y, n, N
                                                  if stud == 'y' or stud == 'Y' :
                                                         flag6 = True
                                                         
@@ -321,7 +321,7 @@ def resta ():                                                                 #d
                                                  
 
                                           
-                                                 elif stud == 'n' or stud == 'N' :
+                                                 elif stud == 'n' or stud == 'N' :  
                                                         flag6 = True
                                                         
                                                         TugrandT15Stnd = Tugrand15
